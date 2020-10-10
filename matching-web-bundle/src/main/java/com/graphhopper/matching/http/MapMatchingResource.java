@@ -148,7 +148,18 @@ public class MapMatchingResource {
                 long time = gpx.trk.get(0).getStartTime()
                         .map(Date::getTime)
                         .orElse(System.currentTimeMillis());
-                return Response.ok(GpxFromInstructions.createGPX(rsp.getBest().getInstructions(), gpx.trk.get(0).name != null ? gpx.trk.get(0).name : "", time, enableElevation, withRoute, withTrack, false, Constants.VERSION, tr), "application/gpx+xml").
+                return Response.ok(GpxFromInstructions.createGPX(
+                            rsp.getBest().getInstructions(),
+                            gpx.trk.get(0).name != null ? gpx.trk.get(0).name : "",
+                            time,
+                            enableElevation,
+                            withRoute,
+                            withTrack,
+                            false,
+                            Constants.VERSION,
+                            tr,
+                            rsp.getBest().getPathDetails()),
+                        "application/gpx+xml").
                         header("X-GH-Took", "" + Math.round(took * 1000)).
                         build();
             } else {
