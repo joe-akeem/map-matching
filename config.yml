@@ -51,7 +51,7 @@ graphhopper:
     - name: mtb
       vehicle: mtb
       weighting: custom
-      custom_model_file: mtb_profile.yaml
+      custom_model_file: /data/mtb_profile.yaml
 
   #  - name: car_with_turn_costs
   #    vehicle: car
