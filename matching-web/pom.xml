@@ -66,6 +66,14 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub joe-akeem Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/joe-akeem/graphhopper</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <finalName>graphhopper-map-matching-web</finalName>
         <plugins>
